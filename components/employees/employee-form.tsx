@@ -45,7 +45,7 @@ const APP_ROLES: { value: UserRole; label: string }[] = [
 const employeeSchema = z
   .object({
     name: z.string().min(2, 'Name is required'),
-    phone: z.string().min(7, 'Contact Number is required'),
+    phone: z.string().optional(),
     email: z.string().optional(),
     password: z.string().optional(),
     role: z.enum(['no_app_access', 'admin', 'sales', 'inventory_manager']),
